@@ -43,14 +43,12 @@ var getProducts = function () {
         ])
         .then(answers => {
             //checks if item id exists
-            for (var i = 0; i < inventory.length; i++) {
-                if (answers.id == inventory[i].item_id) {
-                    quantity(inventory[i]);
-                }
-                else {
-                    console.log("We do not carry that. Soz.");
-                    
-                }
+            var order = checkInventory(answers.id, inventory);
+            if(order===null) {
+                console.log("We do not carry that")
+            }
+            else {
+                console.log(order);
             }
         });
 };
@@ -87,3 +85,14 @@ function readProducts() {
         getProducts();
     });
 };
+
+function checkInventory(choiceId, inventory) {
+    for (var i = 0; i < inventory.length; i++) {
+      if (inventory[i].item_id == choiceId) {
+        // If a matching product is found, return the product
+        return inventory[i];
+      }
+    }
+    // Otherwise return null
+    return null;
+  }
