@@ -45,10 +45,11 @@ var getProducts = function () {
             //checks if item id exists
             var order = checkInventory(answers.id, inventory);
             if(order===null) {
-                console.log("We do not carry that")
+                console.log("We do not carry that");
+                getProducts();
             }
             else {
-                console.log(order);
+                quantity(order);
             }
         });
 };
