@@ -1,7 +1,7 @@
 use bamazon;
 
 insert into products (product_name, department_name, price, stock_quantity)
-values ("Uncharted 4", "Video Games", 49.95, 150),
+values ("Skyrim: Special Edition", "Video Games", 59.95, 150),
  ("DOOM", "Video Games", 59.99, 200),
  ("Crate of Spam", "Food and Drink", 24.50, 50),
  ("Cool Shades", "Apparel", 75.00, 5),

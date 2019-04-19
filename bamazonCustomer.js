@@ -42,13 +42,15 @@ var getProducts = function () {
             }
         ])
         .then(answers => {
-            console.log(answers);
-            answers.id;
             //checks if item id exists
             for (var i = 0; i < inventory.length; i++) {
                 if (answers.id == inventory[i].item_id) {
                     quantity(inventory[i]);
-                };
+                }
+                else {
+                    console.log("We do not carry that. Soz.");
+                    
+                }
             }
         });
 };
@@ -65,7 +67,6 @@ var quantity = function (item) {
         ])
         //responses for quantity
         .then(answers => {
-            console.log(answers)
             if (answers.amount <= item.stock_quantity) {
                 console.log("Coming right up!")
             }
@@ -73,7 +74,6 @@ var quantity = function (item) {
                 console.log("We don't have enough in stock.");
                 getProducts();
             }
-            answers.amount
         });
 };
 
