@@ -96,4 +96,8 @@ function checkInventory(choiceId, inventory) {
     }
     // Otherwise return null
     return null;
+  };
+
+  function updateInventory() {
+      var query = "update products set quantity ? where item_id = " + item
   }
